@@ -1,5 +1,6 @@
 /* styles-uwu */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@
 
 body{
     font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
 }
 
 html{
@@ -14,14 +16,13 @@ html{
 }
 
 p{
-    color: rgb(85, 85, 85) ;
+    color: rgb(85, 85, 85);
 }
 
 /* transitions */
-
 a,
 .btn{
-    transition: all 300s ease;
+    transition: all 300ms ease; /* fixed: '300s' changed to '300ms' */
 }
 
 /* navbar */
@@ -86,7 +87,7 @@ a:hover{
     width: 100%;
     height: 2px;
     background-color: black;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out; /* fixed: added 's' to '0.3' */
 }
 
 .menu-links{
@@ -121,19 +122,211 @@ a:hover{
 .ham-icon.open span:first-child{
     transform: rotate(45deg) translate(10px, 5px);
 }
+
 .ham-icon.open span:nth-child(2){
    opacity: 0;
 }
+
 .ham-icon.open span:last-child{
     transform: rotate(-45deg) translate(10px, -5px);
 }
 
-.ham-icon span:first-child{
-    transform: none;
+/* Section pages */
+img{
+    max-width: 20rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
 }
-.ham-icon span:first-child{
-    opacity: 1;
+
+section{
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    min-height: fit-content;
 }
-.ham-icon span:first-child{
-    transform: none;
+
+.section-container{
+    display: flex;
 }
+
+/* Profile section */
+#profile{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;  
+}
+
+.section-pic-cont{
+    display: flex;
+    max-width: 20rem;
+    margin: auto 0;
+}
+
+.section-text{
+    align-self: center;
+    text-align: center;
+}
+
+.section-text p{
+    font-weight: 600;
+}
+
+.section-text-p1{
+    text-align: center;
+}
+
+.section-text-p2{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.title{
+    font-size: 3rem;
+    text-align: center;
+}
+
+#social-med{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/* icons */
+.icons{
+    cursor: pointer;
+    height: 2rem;
+}
+
+/* buttons */
+.btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn{
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.btn-color-2, .btn-color-1{
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-2:hover, 
+.btn-color-1:hover{
+   cursor: pointer;
+}
+
+.btn-color-2, 
+.btn-color-1:hover{
+   background: rgb(53, 53, 53);
+   color: white;
+}
+
+.btn-color-1{
+    background: none;
+}
+
+.btn-color-1:hover{
+    border-color: rgb(255, 255, 255); /* fixed: corrected 'border' to 'border-color' */
+}
+
+/* about */
+#about{
+    position: relative;
+}
+
+.about-containers{
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-details-container{
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-containers,
+.about-details-container{
+    display: flex;
+}
+
+.about-pic{
+    border-radius: 2rem;
+}
+
+.arrow{
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
+}
+
+.details-container{
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;    
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+}
+
+.section-container
+{
+    gap: 4rem;
+}
+
+.section-pic-cont
+{
+    width: 400px;
+    margin: auto;
+}
+
+/* experience */
+
+#experience{
+    position: relative;
+}
+
+.experience-sub-title{
+    color: rgb(85, 85, 85);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.experience-details-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.article-container{
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-around;
+}
+
+article{
+    display: flex;
+    width: 10rem;
+    /* justify-content: space-around; */
+    gap: 0.5rem;
+}
+
+article .icons{
+    cursor: default;
+}
+
+/* projects */
+
