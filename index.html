@@ -5,238 +5,226 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaypee's Portfolio</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="stylesheet" href="mediaqueries.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
-    <nav id="nav-bar">
-        <div class="logo">Jaypee</div>
-        <div>
-            <ul class="nav-dir">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contacts</a></li>
-            </ul>
+<body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-10 top-0">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <a href="#" class="text-2xl font-bold text-gray-800">Jaypee</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <!-- Links -->
+                    <a href="#about" class="text-gray-800 hover:text-purple-600 transition-colors duration-200">About</a>
+                    <a href="#experience" class="text-gray-800 hover:text-purple-600 transition-colors duration-200">Experience</a>
+                    <a href="#projects" class="text-gray-800 hover:text-purple-600 transition-colors duration-200">Projects</a>
+                    <a href="#contact" class="text-gray-800 hover:text-purple-600 transition-colors duration-200">Contacts</a>
+                </div>
+                <!-- Hamburger Menu -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">About</a>
+                <a href="#experience" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Experience</a>
+                <a href="#projects" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Projects</a>
+                <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Contacts</a>
+            </div>
         </div>
     </nav>
 
-    <nav id="ham-nav">
-        <div class="logo">Jaypee</div>
-        <div class="ham-menu">
-            <div class="ham-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Profile Section -->
+    <section id="profile" class="text-center py-20 px-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="mb-8">
+                <img src="./assets/profile-pic.jpg" alt="Profile picture" class="w-32 h-32 rounded-full mx-auto">
             </div>
-            <div class="menu-links">
-                <ul>
-                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contacts</a></li>
-                </ul>
+            <p class="text-xl">Hello, I'm</p>
+            <h1 class="text-4xl font-bold">Jhon Patrick G. Dela Cruz</h1>
+            <p class="text-2xl mt-2">Frontend Developer</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <button class="px-8 py-3 bg-white text-gray-800 rounded-full shadow-lg hover:bg-gray-100 transition duration-300" onclick="window.open('./assets/DelaCruz.JP.RESUME.pdf')">Download CV</button>
+                <button class="px-8 py-3 bg-white text-gray-800 rounded-full shadow-lg hover:bg-gray-100 transition duration-300" onclick="location.href='#contact'">Contact Info</button>
             </div>
-        </div>
-    </nav>
-
-    <section id="profile">
-        <div class="section-pic-cont">
-            <img src="./assets/profile-pic.jpg" alt="Profile picture"/>
-        </div>
-        <div class="section-text">
-            <p class="section-text-p1">Hello, I'm</p>
-            <h1 class="title">Jhon Patrick G. Dela Cruz</h1>
-            <p class="section-text-p2">Frontend Developer</p>
-            <div class="btn-container">
-                <button class="btn btn-color-1" onclick="window.open('./assets/DelaCruz.JP.RESUME.pdf')">
-                    Download CV
-                </button>
-                <button class="btn btn-color-2" onclick="location.href='./#contact'">
-                    Contact Info
-                </button>
-            </div>
-            <div id="social-med">
-                <img src="./assets/linkedin.png" 
-                    alt="My LinkedIn profile"   
-                    class="icons"
-                    onclick="location.href='https://www.linkedin.com/in/jhon-patrick-dela-cruz-b317402b0/'"/>
-                <img src="./assets/github.png" 
-                    alt="My GitHub profile"
-                    class="icons"
-                    onclick="location.href='https://github.com/jypee-0318'"/>
+            <div class="mt-8 flex justify-center space-x-4">
+                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="w-8 h-8 cursor-pointer" onclick="location.href='https://www.linkedin.com/in/jhon-patrick-dela-cruz-b317402b0/'">
+                <img src="./assets/github.png" alt="My GitHub profile" class="w-8 h-8 cursor-pointer" onclick="location.href='https://github.com/jypee-0318'">
             </div>
         </div>
     </section>
 
-    <section id="about">
-        <p class="section-text-p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="section-pic-cont">
-                <img src="./assets/about-pic.jpg" alt="profile-pic" class="about-pic"/>
-            </div>
-            <div class="about-details-container">
-                <div class="exp-container">
-                    <div class="dev-container-proj-1">
-                        <img src="./assets/experience.png" alt="experience icon" class="icons"/>
-                        <h3>Experience</h3>
-                        <p>1 year <br/>Frontend Development</p>
-                    </div>
-                    <div class="dev-container-proj-1">
-                        <img src="./assets/education.png" alt="education icon" class="icons"/>
-                        <h3>Education</h3>
-                        <p>B.Sc. Information Technology <br/>3rd Year Student</p>
-                    </div>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white text-gray-800">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-xl">Get To Know More</p>
+            <h1 class="text-4xl font-bold">About Me</h1>
+            <div class="mt-12 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="w-48 h-48">
+                    <img src="./assets/about-pic.jpg" alt="profile-pic" class="w-full h-full rounded-full shadow-lg">
                 </div>
-                <div class="text-cont">
+                <div class="text-left">
+                    <div class="flex space-x-8 mb-8">
+                        <div class="text-center">
+                            <img src="./assets/experience.png" alt="experience icon" class="w-12 h-12 mx-auto">
+                            <h3 class="text-xl font-semibold">Experience</h3>
+                            <p>1 year <br>Frontend Development</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./assets/education.png" alt="education icon" class="w-12 h-12 mx-auto">
+                            <h3 class="text-xl font-semibold">Education</h3>
+                            <p>B.Sc. Information Technology <br>3rd Year Student</p>
+                        </div>
+                    </div>
                     <p>I'm Jhon Patrick G. Dela Cruz, Thank you</p>
                 </div>
             </div>
         </div>
-        <img src="./assets/arrow.png" alt="arrow icon" class="icons arrow" onclick="location.href='.#experience'"/>
     </section>
 
-    <section id="experience">
-        <p class="section-text-p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-            <div class="exp-container">
-                <div class="dev-container">
-                    <div class="exp-title">Front End</div>
-                    <div class="icon-container">
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>HTML</i>
-                            <br>
-                            <h3>Advanced</h3>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 bg-gray-100 text-gray-800">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-xl">Explore My</p>
+            <h1 class="text-4xl font-bold">Experience</h1>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Front End</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
+                            <div>
+                                <p class="text-lg font-semibold">HTML</p>
+                                <p>Advanced</p>
+                            </div>
                         </div>
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>CSS</i>
-                            <br>
-                            <h3>Advanced</h3>
+                        <div class="flex items-center space-x-4">
+                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
+                            <div>
+                                <p class="text-lg font-semibold">CSS</p>
+                                <p>Advanced</p>
+                            </div>
                         </div>
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>JAVA</i>
-                            <br>
-                            <h3>Advanced</h3>
+                        <div class="flex items-center space-x-4">
+                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
+                            <div>
+                                <p class="text-lg font-semibold">JavaScript</p>
+                                <p>Advanced</p>
+                            </div>
                         </div>
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>JAVASCRIPT</i>
-                            <br>
-                            <h3>Advanced</h3>
+                        <div class="flex items-center space-x-4">
+                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
+                            <div>
+                                <p class="text-lg font-semibold">Tailwind</p>
+                                <p>Advanced</p>
+                            </div>
                         </div>
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>TAILWIND</i>
-                            <br>
-                            <h3>Advanced</h3>
-                        </div>
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>TYPESCRIPT</i>
-                            <br>
-                            <h3>Advanced</h3>
+                        <div class="flex items-center space-x-4">
+                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
+                            <div>
+                                <p class="text-lg font-semibold">TypeScript</p>
+                                <p>Advanced</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="dev-container">
-                    <div class="exp-title">Back End</div>
-                    <div class="icon-container">
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>PHP</i>
-                            <br>
-                            <h3>Beginner</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Back End</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
+                            <div>
+                                <p class="text-lg font-semibold">PHP</p>
+                                <p>Beginner</p>
+                            </div>
                         </div>
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>SQL</i>
-                            <br>
-                            <h3>Beginner</h3>
+                        <div class="flex items-center space-x-4">
+                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
+                            <div>
+                                <p class="text-lg font-semibold">SQL</p>
+                                <p>Beginner</p>
+                            </div>
                         </div>
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>JAVA</i>
-                            <br>
-                            <h3>Beginner</h3>
+                        <div class="flex items-center space-x-4">
+                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
+                            <div>
+                                <p class="text-lg font-semibold">Java</p>
+                                <p>Beginner</p>
+                            </div>
                         </div>
-                        <div class="exp-icon">
-                            <i class='bx bxs-badge-check'>C</i>
-                            <br>
-                            <h3>Beginner</h3>
+                        <div class="flex items-center space-x-4">
+                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
+                            <div>
+                                <p class="text-lg font-semibold">C</p>
+                                <p>Beginner</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img src="./assets/arrow.png" alt="arrow icon" class="icons arrow" onclick="location.href='#projects'"/>
     </section>
 
-    <section id="projects">
-        <p class="section-text-p1">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="exp-container">
-                <div class="dev-container-proj">
-                    <div class="icon-container">
-                        <div class="div">
-                            <img src="./assets/project-1.png" alt="Project-1" class="project-img"/>
-                            <h2>ImageGallery</h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-1 project-btn" onclick="location.href='https://github.com/jypee-0318'">
-                                    GitHub    
-                                </button>
-                                <button class="btn btn-color-1 project-btn" onclick="location.href='https://github.com/Jypee-0318/ImageGallery'">
-                                    Live Demo 
-                                </button>
-                            </div>
-                        </div>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-white text-gray-800">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-xl">Browse My Recent</p>
+            <h1 class="text-4xl font-bold">Projects</h1>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <img src="./assets/project-1.png" alt="Project-1" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-2xl font-semibold">ImageGallery</h2>
+                    <div class="mt-4 flex justify-center space-x-4">
+                        <button class="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300" onclick="location.href='https://github.com/jypee-0318'">GitHub</button>
+                        <button class="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300" onclick="location.href='https://github.com/Jypee-0318/ImageGallery'">Live Demo</button>
                     </div>
                 </div>
-
-                <!-- <div class="dev-container-proj">
-                    <div class="icon-container">
-                        <div class="div">
-                            <img src="./assets/project-1.png" alt="Project-1" class="project-img"/>
-                            <h2>ImageGallery</h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-1 project-btn" onclick="location.href='https://github.com/jypee-0318'">
-                                    GitHub    
-                                </button>
-                                <button class="btn btn-color-1 project-btn" onclick="location.href='https://github.com/Jypee-0318/ImageGallery'">
-                                    Live Demo 
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
-        <img src="./assets/arrow.png" alt="arrow icon" class="icons arrow" onclick="location.href='#contact'"/>
     </section>
 
-    <!-- Contact Page Section -->
-    <section id="contact">
-        <p class="section-text-p1">Get In Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-container">
-            <form action="submit_form.php" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-color-1">Send Message</button>
-            </form>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-800 text-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-xl">Get In Touch</p>
+            <h1 class="text-4xl font-bold">Contact Me</h1>
+            <div class="mt-12">
+                <form action="submit_form.php" method="POST" class="bg-white p-8 rounded-lg shadow-lg text-gray-800">
+                    <div class="mb-4">
+                        <label for="name" class="block text-lg font-semibold">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full mt-2 p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-lg font-semibold">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full mt-2 p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-lg font-semibold">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full mt-2 p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500"></textarea>
+                    </div>
+                    <button type="submit" class="px-8 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
