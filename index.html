@@ -7,6 +7,101 @@
     <title>Jaypee's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: inherit;
+        }
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: none;
+            background-color: #6b46c1;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-to-top:hover {
+            background-color: #553c9a;
+        }
+        /* Gradient Animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        .letter {
+            display: inline-block;
+            animation: bounce 1s ease-in-out infinite;
+            opacity: 0;
+            animation: fadeIn 0.6s forwards, bounce 1s ease-in-out infinite;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        /* Applying the gradient animation to the body and hero sections */
+        .gradient-background {
+            background: linear-gradient(45deg, #FF6EC7, #D5A6FF, #A3D4FF);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+        /* Adding bounce effect when the page loads */
+        .bounce {
+            animation: bounce 1s infinite;
+        }
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(45deg, #FF6EC7, #D5A6FF, #A3D4FF);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 font-sans">
@@ -20,10 +115,10 @@
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <!-- Links -->
-                    <a href="#about" class="text-gray-800 hover:text-purple-600 transition-colors duration-200">About</a>
-                    <a href="#experience" class="text-gray-800 hover:text-purple-600 transition-colors duration-200">Experience</a>
-                    <a href="#projects" class="text-gray-800 hover:text-purple-600 transition-colors duration-200">Projects</a>
-                    <a href="#contact" class="text-gray-800 hover:text-purple-600 transition-colors duration-200">Contacts</a>
+                    <a href="#about" class="text-gray-800 hover:text-purple-600 transition-colors duration-200 hover-underline-animation">About</a>
+                    <a href="#experience" class="text-gray-800 hover:text-purple-600 transition-colors duration-200 hover-underline-animation">Experience</a>
+                    <a href="#projects" class="text-gray-800 hover:text-purple-600 transition-colors duration-200 hover-underline-animation">Projects</a>
+                    <a href="#contact" class="text-gray-800 hover:text-purple-600 transition-colors duration-200 hover-underline-animation">Contacts</a>
                 </div>
                 <!-- Hamburger Menu -->
                 <div class="md:hidden">
@@ -44,8 +139,29 @@
         </div>
     </nav>
 
-    <!-- Profile Section -->
-    <section id="profile" class="text-center py-20 px-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
+    <!-- Hero Section -->
+    <section id="hero" class="nav-link text-center py-20 px-6 h-screen flex flex-col justify-center items-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl font-bold text-white md:text-6xl transition duration-500 ease-in-out transform hover:text-lightpurple">
+                <span class="letter" style="animation-delay: 0s;">W</span>
+                <span class="letter" style="animation-delay: 0.1s;">e</span>
+                <span class="letter" style="animation-delay: 0.2s;">l</span>
+                <span class="letter" style="animation-delay: 0.3s;">c</span>
+                <span class="letter" style="animation-delay: 0.4s;">o</span>
+                <span class="letter" style="animation-delay: 0.5s;">m</span>
+                <span class="letter" style="animation-delay: 0.6s;">e</span>
+                <span class="letter" style="animation-delay: 0.7s;">!</span>
+            </h1>
+            <div class="mt-8 transition duration-500 ease-in-out transform hover:scale-105">
+                <a href="#about" class="nav-link px-8 py-3 bg-gray-50 font-poppins scroll-smooth gradient-background text-center text-white rounded-full transition duration-500 ease-in-out transform hover:scale-105 hover:text-blow">
+                    Get To Know Me!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="text-center py-20 px-6 h-screen flex flex-col justify-center items-center bg-white text-gray-800">
         <div class="max-w-3xl mx-auto">
             <div class="mb-8">
                 <img src="./assets/profile-pic.jpg" alt="Profile picture" class="w-32 h-32 rounded-full mx-auto">
@@ -54,144 +170,90 @@
             <h1 class="text-4xl font-bold">Jhon Patrick G. Dela Cruz</h1>
             <p class="text-2xl mt-2">Frontend Developer</p>
             <div class="mt-8 flex justify-center space-x-4">
-                <button class="px-8 py-3 bg-white text-gray-800 rounded-full shadow-lg hover:bg-gray-100 transition duration-300" onclick="window.open('./assets/DelaCruz.JP.RESUME.pdf')">Download CV</button>
-                <button class="px-8 py-3 bg-white text-gray-800 rounded-full shadow-lg hover:bg-gray-100 transition duration-300" onclick="location.href='#contact'">Contact Info</button>
+                <button class="px-8 py-3 bg-gray-800 text-white rounded-full shadow-lg hover:bg-gray-700 transition duration-300" onclick="window.open('./assets/DelaCruz.JP.RESUME.pdf')">Download CV</button>
+                <button class="px-8 py-3 bg-gray-800 text-white rounded-full shadow-lg hover:bg-gray-700 transition duration-300" onclick="location.href='#contact'">Contact Info</button>
             </div>
             <div class="mt-8 flex justify-center space-x-4">
-                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="w-8 h-8 cursor-pointer" onclick="location.href='https://www.linkedin.com/in/jhon-patrick-dela-cruz-b317402b0/'">
+                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="w-8 h-8 cursor-pointer" onclick="location.href='https://www.linkedin.com/in/jhon-patrick-delacruz-b3384a252/'">
                 <img src="./assets/github.png" alt="My GitHub profile" class="w-8 h-8 cursor-pointer" onclick="location.href='https://github.com/jypee-0318'">
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-white text-gray-800">
-        <div class="max-w-5xl mx-auto text-center">
-            <p class="text-xl">Get To Know More</p>
-            <h1 class="text-4xl font-bold">About Me</h1>
-            <div class="mt-12 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
-                <div class="w-48 h-48">
-                    <img src="./assets/about-pic.jpg" alt="profile-pic" class="w-full h-full rounded-full shadow-lg">
-                </div>
-                <div class="text-left">
-                    <div class="flex space-x-8 mb-8">
-                        <div class="text-center">
-                            <img src="./assets/experience.png" alt="experience icon" class="w-12 h-12 mx-auto">
-                            <h3 class="text-xl font-semibold">Experience</h3>
-                            <p>1 year <br>Frontend Development</p>
-                        </div>
-                        <div class="text-center">
-                            <img src="./assets/education.png" alt="education icon" class="w-12 h-12 mx-auto">
-                            <h3 class="text-xl font-semibold">Education</h3>
-                            <p>B.Sc. Information Technology <br>3rd Year Student</p>
-                        </div>
-                    </div>
-                    <p>I'm Jhon Patrick G. Dela Cruz, Thank you</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Experience Section -->
-    <section id="experience" class="py-20 px-6 bg-gray-100 text-gray-800">
-        <div class="max-w-5xl mx-auto text-center">
-            <p class="text-xl">Explore My</p>
-            <h1 class="text-4xl font-bold">Experience</h1>
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-4">Front End</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-4">
-                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
-                            <div>
-                                <p class="text-lg font-semibold">HTML</p>
-                                <p>Advanced</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
-                            <div>
-                                <p class="text-lg font-semibold">CSS</p>
-                                <p>Advanced</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
-                            <div>
-                                <p class="text-lg font-semibold">JavaScript</p>
-                                <p>Advanced</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
-                            <div>
-                                <p class="text-lg font-semibold">Tailwind</p>
-                                <p>Advanced</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
-                            <div>
-                                <p class="text-lg font-semibold">TypeScript</p>
-                                <p>Advanced</p>
-                            </div>
-                        </div>
+    <section id="experience" class="bg-gray-100 py-20 px-6 h-screen flex flex-col justify-center items-center">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-semibold text-gray-800 mb-12">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Skill 1 -->
+                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                    <div class="flex justify-center mb-6">
+                        <i class="fa-brands fa-html5 text-6xl text-white"></i>
                     </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4">HTML</h3>
+                    <p class="text-white">Expert in structuring web pages with semantic HTML.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-4">Back End</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-4">
-                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
-                            <div>
-                                <p class="text-lg font-semibold">PHP</p>
-                                <p>Beginner</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
-                            <div>
-                                <p class="text-lg font-semibold">SQL</p>
-                                <p>Beginner</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
-                            <div>
-                                <p class="text-lg font-semibold">Java</p>
-                                <p>Beginner</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class='bx bxs-badge-check text-2xl text-purple-600'></i>
-                            <div>
-                                <p class="text-lg font-semibold">C</p>
-                                <p>Beginner</p>
-                            </div>
-                        </div>
+                <!-- Skill 2 -->
+                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                    <div class="flex justify-center mb-6">
+                        <i class="fa-brands fa-css3-alt text-6xl text-white"></i>
                     </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4">CSS</h3>
+                    <p class="text-white">Experienced with styling web pages using CSS and frameworks like Tailwind CSS.</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                    <div class="flex justify-center mb-6">
+                        <i class="fa-brands fa-js text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4">JavaScript</h3>
+                    <p class="text-white">Skilled in JavaScript for building interactive web applications.</p>
+                </div>
+                <!-- Skill 4 -->
+                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-25">
+                    <div class="flex justify-center mb-6">
+                        <i class="fa-brands fa-angular text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4">Angular</h3>
+                    <p class="text-white">Proficient in building dynamic, single-page applications using Angular.</p>
+                </div>
+                <!-- Skill 5 -->
+                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                    <div class="flex justify-center mb-6">
+                        <i class="fa-brands fa-php text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4">PHP</h3>
+                    <p class="text-white">Experienced in development with PHP.</p>
+                </div>
+                <!-- Skill 6 -->
+                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                    <div class="flex justify-center mb-6">
+                        <i class="fa-brands fa-github text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4">Git</h3>
+                    <p class="text-white">Experienced with version control using Git and GitHub for collaboration.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 bg-white text-gray-800">
-        <div class="max-w-5xl mx-auto text-center">
-            <p class="text-xl">Browse My Recent</p>
-            <h1 class="text-4xl font-bold">Projects</h1>
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                    <img src="./assets/project-1.png" alt="Project-1" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h2 class="text-2xl font-semibold">ImageGallery</h2>
-                    <div class="mt-4 flex justify-center space-x-4">
-                        <button class="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300" onclick="location.href='https://github.com/jypee-0318'">GitHub</button>
-                        <button class="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300" onclick="location.href='https://github.com/Jypee-0318/ImageGallery'">Live Demo</button>
-                    </div>
+<section id="projects" class="py-20 px-6 bg-white text-gray-800 h-screen flex flex-col justify-center items-center">
+    <div class="max-w-5xl mx-auto text-center">
+        <p class="text-xl">Browse My Recent</p>
+        <h1 class="text-4xl font-bold">Projects</h1>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                <img src="./assets/project-1.png" alt="Project-1" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-2xl font-semibold">ImageGallery</h2>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <button class="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300" onclick="location.href='https://github.com/jypee-0318'">GitHub</button>
+                    <button class="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300" onclick="location.href='https://github.com/Jypee-0318/ImageGallery'">Live Demo</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 bg-gray-800 text-white">
@@ -218,11 +280,34 @@
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <div id="back-to-top" class="back-to-top">
+        <i class='bx bx-up-arrow-alt text-2xl'></i>
+    </div>
+
     <script>
         // Mobile menu toggle
         document.getElementById('menu-toggle').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('animate-slide-in');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
