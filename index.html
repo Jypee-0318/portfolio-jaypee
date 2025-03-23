@@ -161,88 +161,89 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="text-center py-20 px-6 h-screen flex flex-col justify-center items-center bg-white text-gray-800">
-        <div class="max-w-3xl mx-auto">
-            <div class="mb-8">
-                <img src="./assets/profile-pic.jpg" alt="Profile picture" class="w-32 h-32 rounded-full mx-auto">
-            </div>
-            <p class="text-xl">Hello, I'm</p>
-            <h1 class="text-4xl font-bold">Jhon Patrick G. Dela Cruz</h1>
-            <p class="text-2xl mt-2">Frontend Developer</p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <button class="px-8 py-3 bg-gray-800 text-white rounded-full shadow-lg hover:bg-gray-700 transition duration-300" onclick="window.open('./assets/DelaCruz.JP.RESUME.pdf')">Download CV</button>
-                <button class="px-8 py-3 bg-gray-800 text-white rounded-full shadow-lg hover:bg-gray-700 transition duration-300" onclick="location.href='#contact'">Contact Info</button>
-            </div>
-            <div class="mt-8 flex justify-center space-x-4">
-                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="w-8 h-8 cursor-pointer" onclick="location.href='https://www.linkedin.com/in/jhon-patrick-delacruz-b3384a252/'">
-                <img src="./assets/github.png" alt="My GitHub profile" class="w-8 h-8 cursor-pointer" onclick="location.href='https://github.com/jypee-0318'">
-            </div>
+<section id="about" class="text-center py-10 px-4 md:py-20 md:px-6 h-screen flex flex-col justify-center items-center bg-white text-gray-800">
+    <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+            <img src="./assets/profile-pic.jpg" alt="Profile picture" class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full mx-auto border-4 border-gray-800 animate-bounce">
         </div>
-    </section>
+        <p class="text-lg sm:text-xl md:text-2xl">Hello, I'm</p>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">Jhon Patrick G. Dela Cruz</h1>
+        <p class="text-xl sm:text-2xl md:text-3xl mt-2">Frontend Developer</p>
+        <p class="mt-4 text-base sm:text-lg md:text-xl text-gray-600">I am a passionate frontend developer with experience in building responsive and interactive web applications. I enjoy creating beautiful and functional user interfaces using modern web technologies.</p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <button class="px-6 py-2 sm:px-8 sm:py-3 bg-gray-800 text-white rounded-full shadow-lg hover:bg-gray-700 transition duration-300" onclick="window.open('./assets/DelaCruz.JP.RESUME.pdf')">Download CV</button>
+            <button class="px-6 py-2 sm:px-8 sm:py-3 bg-gray-800 text-white rounded-full shadow-lg hover:bg-gray-700 transition duration-300" onclick="location.href='#contact'">Contact Info</button>
+        </div>
+        <div class="mt-8 flex justify-center space-x-4">
+            <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="w-6 h-6 sm:w-8 sm:h-8 cursor-pointer" onclick="location.href='https://www.linkedin.com/in/jhon-patrick-delacruz-b3384a252/'">
+            <img src="./assets/github.png" alt="My GitHub profile" class="w-6 h-6 sm:w-8 sm:h-8 cursor-pointer" onclick="location.href='https://github.com/jypee-0318'">
+        </div>
+    </div>
+</section>
 
     <!-- Experience Section -->
-    <section id="experience" class="bg-gray-100 py-20 px-6 h-screen flex flex-col justify-center items-center">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-semibold text-gray-800 mb-12">Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <!-- Skill 1 -->
-                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
-                    <div class="flex justify-center mb-6">
-                        <i class="fa-brands fa-html5 text-6xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">HTML</h3>
-                    <p class="text-white">Expert in structuring web pages with semantic HTML.</p>
+<section id="experience" class="bg-gray-100 py-10 px-4 md:py-20 md:px-6 h-screen flex flex-col justify-center items-center">
+    <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-8 md:mb-12">Skills</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Skill 1 -->
+            <div class="gradient-background shadow-lg rounded-lg p-4 sm:p-5 md:p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                <div class="flex justify-center mb-4 sm:mb-5 md:mb-6">
+                    <i class="fa-brands fa-html5 text-4xl sm:text-5xl md:text-6xl text-white"></i>
                 </div>
-                <!-- Skill 2 -->
-                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
-                    <div class="flex justify-center mb-6">
-                        <i class="fa-brands fa-css3-alt text-6xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">CSS</h3>
-                    <p class="text-white">Experienced with styling web pages using CSS and frameworks like Tailwind CSS.</p>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3 md:mb-4">HTML</h3>
+                <p class="text-white text-sm sm:text-base md:text-lg">Expert in structuring web pages with semantic HTML.</p>
+            </div>
+            <!-- Skill 2 -->
+            <div class="gradient-background shadow-lg rounded-lg p-4 sm:p-5 md:p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                <div class="flex justify-center mb-4 sm:mb-5 md:mb-6">
+                    <i class="fa-brands fa-css3-alt text-4xl sm:text-5xl md:text-6xl text-white"></i>
                 </div>
-                <!-- Skill 3 -->
-                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
-                    <div class="flex justify-center mb-6">
-                        <i class="fa-brands fa-js text-6xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">JavaScript</h3>
-                    <p class="text-white">Skilled in JavaScript for building interactive web applications.</p>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3 md:mb-4">CSS</h3>
+                <p class="text-white text-sm sm:text-base md:text-lg">Experienced with styling web pages using CSS and frameworks like Tailwind CSS.</p>
+            </div>
+            <!-- Skill 3 -->
+            <div class="gradient-background shadow-lg rounded-lg p-4 sm:p-5 md:p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                <div class="flex justify-center mb-4 sm:mb-5 md:mb-6">
+                    <i class="fa-brands fa-js text-4xl sm:text-5xl md:text-6xl text-white"></i>
                 </div>
-                <!-- Skill 4 -->
-                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-25">
-                    <div class="flex justify-center mb-6">
-                        <i class="fa-brands fa-angular text-6xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">Angular</h3>
-                    <p class="text-white">Proficient in building dynamic, single-page applications using Angular.</p>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3 md:mb-4">JavaScript</h3>
+                <p class="text-white text-sm sm:text-base md:text-lg">Skilled in JavaScript for building interactive web applications.</p>
+            </div>
+            <!-- Skill 4 -->
+            <div class="gradient-background shadow-lg rounded-lg p-4 sm:p-5 md:p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                <div class="flex justify-center mb-4 sm:mb-5 md:mb-6">
+                    <i class="fa-brands fa-angular text-4xl sm:text-5xl md:text-6xl text-white"></i>
                 </div>
-                <!-- Skill 5 -->
-                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
-                    <div class="flex justify-center mb-6">
-                        <i class="fa-brands fa-php text-6xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">PHP</h3>
-                    <p class="text-white">Experienced in development with PHP.</p>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3 md:mb-4">Angular</h3>
+                <p class="text-white text-sm sm:text-base md:text-lg">Proficient in building dynamic, single-page applications using Angular.</p>
+            </div>
+            <!-- Skill 5 -->
+            <div class="gradient-background shadow-lg rounded-lg p-4 sm:p-5 md:p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                <div class="flex justify-center mb-4 sm:mb-5 md:mb-6">
+                    <i class="fa-brands fa-php text-4xl sm:text-5xl md:text-6xl text-white"></i>
                 </div>
-                <!-- Skill 6 -->
-                <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
-                    <div class="flex justify-center mb-6">
-                        <i class="fa-brands fa-github text-6xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-white mb-4">Git</h3>
-                    <p class="text-white">Experienced with version control using Git and GitHub for collaboration.</p>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3 md:mb-4">PHP</h3>
+                <p class="text-white text-sm sm:text-base md:text-lg">Experienced in development with PHP.</p>
+            </div>
+            <!-- Skill 6 -->
+            <div class="gradient-background shadow-lg rounded-lg p-4 sm:p-5 md:p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+                <div class="flex justify-center mb-4 sm:mb-5 md:mb-6">
+                    <i class="fa-brands fa-github text-4xl sm:text-5xl md:text-6xl text-white"></i>
                 </div>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3 md:mb-4">Git</h3>
+                <p class="text-white text-sm sm:text-base md:text-lg">Experienced with version control using Git and GitHub for collaboration.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Projects Section -->
 <section id="projects" class="py-20 px-6 bg-white text-gray-800 h-screen flex flex-col justify-center items-center">
     <div class="max-w-5xl mx-auto text-center">
         <p class="text-xl">Browse My Recent</p>
         <h1 class="text-4xl font-bold">Projects</h1>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
                 <img src="./assets/project-1.png" alt="Project-1" class="w-full h-48 object-cover rounded-lg mb-4">
                 <h2 class="text-2xl font-semibold">ImageGallery</h2>
@@ -251,6 +252,7 @@
                     <button class="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300" onclick="location.href='https://github.com/Jypee-0318/ImageGallery'">Live Demo</button>
                 </div>
             </div>
+            <!-- Add more project cards as needed -->
         </div>
     </div>
 </section>
